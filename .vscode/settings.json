@@ -1,0 +1,16 @@
+{
+    "editor.formatOnSave": true,
+    "editor.fontSize": 14,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript"
+    },
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+    "minapp-vscode.disableAutoConfig": true,
+    "breadcrumbs.enabled": true,
+    "window.zoomLevel": 0,
+}
