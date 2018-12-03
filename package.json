@@ -15,11 +15,18 @@
         "start": "react-app-rewired start",
         "build": "react-app-rewired build",
         "test": "react-app-rewired test",
-        "eject": "react-app-rewired eject"
+        "eject": "react-app-rewired eject",
+        "precommit-msg": "echo '正在执行eslint验证...' && exit 0",
+        "eslint": "eslint ./src",
+        "eslint-fix": "eslint --fix ./src"
     },
     "eslintConfig": {
         "extends": "react-app"
     },
+    "pre-commit": [
+        "precommit-msg",
+        "eslint"
+    ],
     "browserslist": [
         ">0.2%",
         "not dead",
