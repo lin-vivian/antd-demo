@@ -9,6 +9,7 @@ import TopSideLayout from './components/layout/TopSideLayout'
 import TopSideBannerLayout from './components/layout/TopSideBannerLayout'
 import SideLayout from './components/layout/SideLayout'
 import ResponsiveSideLayout from './components/layout/ResponsiveSideLayout'
+import FixedLayout from './components/layout/FixedLayout'
 
 const { TabPane } = Tabs
 
@@ -16,7 +17,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            visibleNum: 3
+            visibleNum: 6
         }
     }
     handleChange = (num) => {
@@ -29,7 +30,7 @@ class App extends Component {
         return (
             <LocaleProvider locale={zh_CN}>
                 <div>
-                    <Tabs defaultActiveKey="4">
+                    <Tabs defaultActiveKey="6">
                         <TabPane tab={<span><Icon type="home" />我是上中下布局</span>} key="1">
                             <ClassicLayout></ClassicLayout>
                         </TabPane>
@@ -44,6 +45,9 @@ class App extends Component {
                         </TabPane>
                         <TabPane tab={<span>我是响应布局</span>} key="5">
                             <ResponsiveSideLayout></ResponsiveSideLayout>
+                        </TabPane>
+                        <TabPane tab={<span>我是固定头部布局</span>} key="6">
+                            <FixedLayout></FixedLayout>
                         </TabPane>
                     </Tabs>
                 </div>

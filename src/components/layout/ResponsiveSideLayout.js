@@ -118,7 +118,6 @@ class TopSideBannerLayout extends Component {
         })
     }
     render() {
-        const { collapsed } = this.state
         return <Layout className="responsive-side-layout">
             <Sider
                 breakpoint='lg'
