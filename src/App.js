@@ -8,6 +8,8 @@ import ClassicLayout from './components/layout/ClassicLayout'
 import TopSideLayout from './components/layout/TopSideLayout'
 import TopSideBannerLayout from './components/layout/TopSideBannerLayout'
 import SideLayout from './components/layout/SideLayout'
+import ResponsiveSideLayout from './components/layout/ResponsiveSideLayout'
+
 const { TabPane } = Tabs
 
 class App extends Component {
@@ -40,8 +42,8 @@ class App extends Component {
                         <TabPane tab={<span>我是侧边布局</span>} key="4">
                             <SideLayout></SideLayout>
                         </TabPane>
-                        <TabPane tab={<span>我是上中下布局</span>} key="5">
-                            <SideLayout></SideLayout>
+                        <TabPane tab={<span>我是响应布局</span>} key="5">
+                            <ResponsiveSideLayout></ResponsiveSideLayout>
                         </TabPane>
                     </Tabs>
                 </div>
