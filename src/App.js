@@ -1,11 +1,15 @@
 // src/App.js
 import React, { Component } from 'react';
-import { Button, LocaleProvider, Icon } from 'antd';
+import { LocaleProvider, Icon, Tabs } from 'antd';
+
 import zh_CN from 'antd/lib/locale-provider/zh_CN'
 import './App.less'
 import ClassicLayout from './components/layout/ClassicLayout'
 import TopSideLayout from './components/layout/TopSideLayout'
 import TopSideBannerLayout from './components/layout/TopSideBannerLayout'
+import SideLayout from './components/layout/SideLayout'
+const { TabPane } = Tabs
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -19,26 +23,27 @@ class App extends Component {
         })
     }
     render() {
-        const visibleNum = this.state.visibleNum
+
         return (
             <LocaleProvider locale={zh_CN}>
                 <div>
-                    <div className="layout-change-button"
-                        style={{}}
-                    >
-                        <Button type="primary" onClick={this.handleChange.bind(this, 1)}><Icon type="home" />我是布局一</Button>
-                        <Button type="primary" onClick={this.handleChange.bind(this, 2)}>我是布局二</Button>
-                        <Button type="primary" onClick={this.handleChange.bind(this, 3)}>我是布局三</Button>
-                    </div>
-                    {
-                        visibleNum === 1 && <ClassicLayout></ClassicLayout>
-                    }
-                    {
-                        visibleNum === 2 && <TopSideLayout></TopSideLayout>
-                    }
-                    {
-                        visibleNum === 3 && <TopSideBannerLayout></TopSideBannerLayout>
-                    }
+                    <Tabs defaultActiveKey="4">
+                        <TabPane tab={<span><Icon type="home" />我是上中下布局</span>} key="1">
+                            <ClassicLayout></ClassicLayout>
+                        </TabPane>
+                        <TabPane tab={<span>我是顶部-侧边-通栏布局</span>} key="2">
+                            <TopSideLayout></TopSideLayout>
+                        </TabPane>
+                        <TabPane tab={<span>我是顶部-侧边布局</span>} key="3">
+                            <TopSideBannerLayout></TopSideBannerLayout>
+                        </TabPane>
+                        <TabPane tab={<span>我是侧边布局</span>} key="4">
+                            <SideLayout></SideLayout>
+                        </TabPane>
+                        <TabPane tab={<span>我是上中下布局</span>} key="5">
+                            <SideLayout></SideLayout>
+                        </TabPane>
+                    </Tabs>
                 </div>
 
             </LocaleProvider>
