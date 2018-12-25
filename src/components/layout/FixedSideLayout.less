@@ -1,0 +1,48 @@
+
+
+.fixed-side-layout{
+    .side-bar{
+        &>div{
+            position: relative;
+            overflow: hidden;
+            overflow-y: auto;
+            margin-right: -18px;  
+        }
+        
+        .logo{
+            height: 32px;
+            background-color: rgba(255, 255, 255, .2);
+            margin: 16px 40px 16px 16px;
+        }
+    }
+      
+    .content-area{
+        .header{
+            background: #fff;
+            padding: 0 32px;
+            .menu-trigger{
+                font-size: 18px;
+                line-height: 64px;
+                cursor: pointer;
+                transition: color .3s;
+            }
+            .menu-trigger:hover{
+                color:#f757ba
+            }
+        }
+        .content-breadcrumb{
+            margin: 16px 32px;
+        }
+        .content{
+            height: 100%;
+            margin: 0 32px;
+            padding: 0 24px;
+            background: #fff;
+            overflow: initial;
+        }
+        
+    }
+    .footer{
+        text-align: center;
+    }
+}
