@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
 import './FixedSideLayout.less'
+import Grid from "../content/Grid";
 const { Header, Content, Footer, Sider } = Layout;
 const MenuItem = Menu.Item;
 const BreadcrumbItem = Breadcrumb.Item;
@@ -149,7 +150,7 @@ class TopSideBannerLayout extends Component {
                 </Menu>
             </Sider>
             <Layout className="content-area">
-                <div style={{ height: '7000px' }}>
+                <div>
                     <Header className="header">
                         <Icon
                             className='menu-trigger'
@@ -164,9 +165,7 @@ class TopSideBannerLayout extends Component {
                     </Breadcrumb>
                     <Content className="content">
 
-                        <div>
-                            Content
-                        </div>
+                        <Grid></Grid>
 
                     </Content>
                     <Footer className="footer">

@@ -51,7 +51,7 @@ class App extends Component {
                             <FixedLayout></FixedLayout>
                         </TabPane>
                         <TabPane tab={<span>我是固定侧边布局</span>} key="7">
-                            <FixedSideLayout></FixedSideLayout>
+                            <FixedSideLayout> </FixedSideLayout>
                         </TabPane>
                     </Tabs>
                 </div>
