@@ -141,9 +141,7 @@ class TopSideBannerLayout extends Component {
 
                     <Content className="content">
 
-                        <div>
-                            Content
-                        </div>
+                        {this.props.children}
 
                     </Content>
                 </Layout>

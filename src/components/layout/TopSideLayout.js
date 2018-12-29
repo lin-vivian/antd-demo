@@ -139,11 +139,7 @@ class TopSideLayout extends Component {
                         <BreadcrumbItem>App</BreadcrumbItem>
                     </Breadcrumb>
                     <Content className="content">
-
-                        <div>
-                            Content
-                        </div>
-
+                        {this.props.children}
                     </Content>
                 </Layout>
             </Layout>
