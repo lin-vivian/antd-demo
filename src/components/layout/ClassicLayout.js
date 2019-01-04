@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu, Breadcrumb, Affix } from "antd";
 import './ClassicLayout.less'
 import ButtonComp from "../content/Button/index";
 const { Header, Content, Footer } = Layout;
@@ -13,20 +13,23 @@ class ClassicLayout extends Component {
     }
     render() {
         return <Layout className="layout classic-layout-section">
-            <Header>
-                <div className="logo"></div>
-                <Menu
-                    theme='dark'
-                    mode='horizontal'
-                    defaultSelectedKeys={['1']}
-                    style={{ lineHeight: '64px' }}
-                >
-                    <MenuItem key="1">nav1</MenuItem>
-                    <MenuItem key="2">nav2</MenuItem>
-                    <MenuItem key="3">nav3</MenuItem>
-                    <MenuItem key="4">nav4</MenuItem>
-                </Menu>
-            </Header>
+            <Affix offsetTop='0'>
+                <Header>
+                    <div className="logo"></div>
+                    <Menu
+                        theme='dark'
+                        mode='horizontal'
+                        defaultSelectedKeys={['1']}
+                        style={{ lineHeight: '64px' }}
+                    >
+                        <MenuItem key="1">nav1</MenuItem>
+                        <MenuItem key="2">nav2</MenuItem>
+                        <MenuItem key="3">nav3</MenuItem>
+                        <MenuItem key="4">nav4</MenuItem>
+                    </Menu>
+                </Header>
+            </Affix>
+
             <Content className="classic-layout-content">
                 <Breadcrumb className="content-breadcrumb">
                     <BreadcrumbItem>Home</BreadcrumbItem>
@@ -38,6 +41,7 @@ class ClassicLayout extends Component {
                 </div>
 
             </Content>
+
             <Footer className="classic-footer">
                 Antd-Dome  ©2018 Created by Vivian-lin
             </Footer>

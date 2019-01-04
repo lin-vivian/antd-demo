@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Radio, Icon, Menu, Dropdown } from "antd";
+import { Button, Radio, Icon, Menu, Dropdown, Affix } from "antd";
 import './index.less'
 
 const RadioGroup = Radio.Group
@@ -30,8 +30,16 @@ class ButtonComp extends Component {
             loading: !this.state.loading
         })
     }
+    handleAffixed = (a) => {
+        console.log('data-this', this);
+        console.log('data-a', a);
+
+
+    }
     render() {
         const { size, loading } = this.state
+        console.log('data-this.refs.container', this.refs.container);
+
         const menu = (<Menu>
             <MenuItem key='1'>memu 1</MenuItem>
             <MenuItem key='2'>memu 2</MenuItem>
@@ -140,6 +148,27 @@ class ButtonComp extends Component {
                         <Button block>按我吧～</Button>
                     </span>
 
+                </div>
+                <div>
+                    Affix固钉：
+                    <Affix offsetTop={400} onChange={this.handleAffixed}>
+                        <Button>affixed-offsetTop-400</Button>
+                    </Affix>
+                </div>
+
+                <div className="scrollable-container" ref={node => this.container = node}>
+                    <div className="background">
+                        <Affix target={() => this.container}>
+                            <Button type="primary">
+                                Fixed at the top of container
+                                </Button>
+                        </Affix>
+                        <div>我是测试target监听滚动事件</div>
+                        <div>我是测试target监听滚动事件</div>
+                        <div>我是测试target监听滚动事件</div>
+                        <div>我是测试target监听滚动事件</div>
+                        <div>我是测试target监听滚动事件</div>
+                    </div>
                 </div>
 
             </div>
