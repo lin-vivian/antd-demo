@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Breadcrumb, Icon } from "antd";
+import { Layout, Menu, Breadcrumb, Icon, Alert } from "antd";
+import { Router, Route, Link, hashHistory } from "react-router";
 import './ResponsiveSideLayout.less'
 const { Header, Content, Footer, Sider } = Layout;
 const MenuItem = Menu.Item;
@@ -11,6 +12,34 @@ const menuIcon = {
     sub3: 'notification',
     sub4: 'apple'
 }
+const Apps = () => (
+    <ul className='app-list'>
+        <li>
+            <Link to='apps/1' activeClassName='active'>Application1</Link> : <Link to='apps/1/detail' activeClassName='active'>Detail</Link>
+        </li>
+        <li>
+            <Link to='apps/2' activeClassName='active'>Application2</Link> : <Link to='apps/2/detail' activeClassName='active'>Detail</Link>
+        </li>
+    </ul>
+)
+const Home = ({ routes, params, children }) => (
+    <div>
+        <div className='demo'>
+            <Breadcrumb routes={routes} params={params}></Breadcrumb>
+        </div>
+        <Content className="content">
+            <div className='demo-nav'>
+                <Link to='/' activeClassName='active'>Home</Link>
+                <Link to='/apps' activeClassName='active'>Application List</Link>
+            </div>
+            {children || '面包屑测试'}
+            <Alert style={{ margin: '16px 0' }} message='Click the nav above to switch:'></Alert>
+        </Content>
+    </div>
+
+
+
+)
 const menuItemsList = [
     {
         key: 'sub1',
@@ -137,18 +166,27 @@ class TopSideBannerLayout extends Component {
             <Layout className="responsive-side-layout-content">
                 <Header className="header">
                 </Header>
-                <Breadcrumb className="content-breadcrumb">
-                    <BreadcrumbItem>Home</BreadcrumbItem>
-                    <BreadcrumbItem>List</BreadcrumbItem>
+                {/* <Breadcrumb className="content-breadcrumb" separator='->'>
+                    <BreadcrumbItem><a href="">Home</a></BreadcrumbItem>
+                    <BreadcrumbItem><a href="">List</a></BreadcrumbItem>
                     <BreadcrumbItem>App</BreadcrumbItem>
-                </Breadcrumb>
-                <Content className="content">
+                </Breadcrumb> */}
+                <Router history={hashHistory}>
+                    <Route name="home" breadcrumbName="Home" path="/" component={Home}>
+                        <Route name="apps" breadcrumbName="Application List" path="apps" component={Apps}>
+                            <Route name="app" breadcrumbName="Application:id" path=":id">
+                                <Route name="detail" breadcrumbName="Detail" path="detail" />
+                            </Route>
+                        </Route>
+                    </Route>
+                </Router>
+                {/* <Content className="content">
 
                     <div>
                         Content
                     </div>
 
-                </Content>
+                </Content> */}
                 <Footer className="footer">
                     Antd-Dome  ©2018 Created by Vivian-lin
                 </Footer>

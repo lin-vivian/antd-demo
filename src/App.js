@@ -33,7 +33,7 @@ class App extends Component {
         return (
             <LocaleProvider locale={zh_CN}>
                 <div className='container'>
-                    <Tabs defaultActiveKey="1">
+                    <Tabs defaultActiveKey="5">
                         <TabPane tab={<span><Icon type="home" />我是上中下布局</span>} key="1">
                             <ClassicLayout></ClassicLayout>
                         </TabPane>
