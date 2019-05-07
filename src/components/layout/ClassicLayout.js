@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Layout, Menu, Breadcrumb, Affix } from "antd";
 import './ClassicLayout.less'
 import ButtonComp from "../content/Button/index";
+import FetchData from '../../contains/index'
 const { Header, Content, Footer } = Layout;
 const MenuItem = Menu.Item;
 const BreadcrumbItem = Breadcrumb.Item;
@@ -38,6 +39,7 @@ class ClassicLayout extends Component {
                 </Breadcrumb>
                 <div className="classic-page-content">
                     <ButtonComp></ButtonComp>
+                    <FetchData></FetchData>
                 </div>
 
             </Content>
